@@ -15,7 +15,7 @@ recommendedAnime = reproduce(recommendedAnime, 8)
       </section>
 
       <section>
-        <Header title="Rekomendasi" />
+        <Header title="Rekomendasi Anime" />
         <AnimeList api={recommendedAnime} />
       </section>
     </>
