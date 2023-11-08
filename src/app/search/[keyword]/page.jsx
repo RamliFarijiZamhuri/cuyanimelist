@@ -10,7 +10,6 @@ const Page = async ({ params }) => {
 
     return (
         <>
-            {/* Anime Populer */}
             <section>
                 <Header title={`Pencarian Untuk ${decodedKeyword}..`} />
                 <AnimeList api={searchAnime} />
