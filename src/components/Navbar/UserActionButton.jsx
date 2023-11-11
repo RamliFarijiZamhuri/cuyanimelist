@@ -9,9 +9,9 @@ const UserActionButton = async () => {
     return (
         <div className="flex md:gap-2 gap-5 justify-center">
             {
-                user ? <Link href="/users/dashboard" className="flex justify-center items-center border-solid border-2 border-color-dark py-1 px-12">Dashboard</Link> : null
+                user ? <Link href="/users/dashboard" className="flex justify-center items-center border-solid border-2 border-color-dark py-1 px-8">Dashboard</Link> : null
             }
-            <Link href={actionURL} className="bg-color-dark text-color-accent py-1 px-12">{actionLabel}</Link>
+            <Link href={actionURL} className="flex justify-center items-center border-2 bg-color-dark text-color-accent py-1 px-8">{actionLabel}</Link>
         </div>
     )
 }

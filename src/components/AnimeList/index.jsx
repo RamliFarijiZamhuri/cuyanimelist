@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const AnimeList = ({ api }) => {
     return (
-        <div className="grid md:grid-cols-5 sm:grid-cols-4 grid-cols-2 px-4 gap-4">
+        <div className="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 px-4 gap-4">
             {api.data?.map((anime, index) => {
                 return (
                     <Link href={`/anime/${anime.mal_id}`} className="cursor-ponter text-color-primary hover:text-color-accent transition-all" key={index}>
