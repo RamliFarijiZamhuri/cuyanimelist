@@ -9,7 +9,7 @@ const Page = async ({ params: { id } }) => {
         <>
             <div className="flex flex-col md:gap-3 gap-4 py-4 md:mx-4 mx-2">
                 <div className="pt-4 px-2">
-                    <p className="text-2xl text-color-primary">{anime.data.title} {anime.data.year}</p>
+                    <p className="text-2xl text-color-primary">{anime.data.title} {anime.data.year} | {anime.data.title_japanese}</p>
                 </div>
                 <div className="flex justify-start items-center p-4 gap-1 text-xl font-bold overflow-auto">
                     <span className="whitespace-nowrap rounded-full bg-color-primary px-2.5 py-0.5 text-sm text-color-accent">
