@@ -36,6 +36,18 @@ const Page = async ({ params: { id } }) => {
                         Popularitas #
                         {anime.data.popularity}
                     </span>
+                    <span className="whitespace-nowrap rounded-full bg-color-primary px-2.5 py-0.5 text-sm text-color-accent">
+                        Source #
+                        {anime.data.source}
+                    </span>
+                    <span className="whitespace-nowrap rounded-full bg-color-primary px-2.5 py-0.5 text-sm text-color-accent">
+                        Status #
+                        {anime.data.status}
+                    </span>
+                    <span className="whitespace-nowrap rounded-full bg-color-primary px-2.5 py-0.5 text-sm text-color-accent">
+                        Type #
+                        {anime.data.type}
+                    </span>
                 </div>
                 <div className="grid md:grid-cols-2 gap-2 grid-cols-1">
                     <Image src={anime.data.images.webp.image_url} alt={anime.data.images.jpg.image_url} width={350} height={350} className="w-full rounded object-cover max-h-96" />
@@ -43,7 +55,12 @@ const Page = async ({ params: { id } }) => {
                 </div>
                 <div className="flex flex-col py-4 gap-2">
                     <h2 className="text-xl text-color-primary">{anime.data.duration} | {anime.data.rating}</h2>
+                    <h2 className="text-xl text-color-primary ">{anime.data.broadcast.timezone}</h2>
                     <p className="text-color-primary ">{anime.data.synopsis}</p>
+                    <p className="text-color-primary ">{anime.data.background}</p>
+                </div>
+                <div className="flex flex-col py-4 gap-2">
+                    <a className="text-color-primary underline" href={anime.data.url}>official website</a>
                 </div>
             </div>
         </>
