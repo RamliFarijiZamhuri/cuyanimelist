@@ -4,6 +4,7 @@ import Image from "next/image"
 
 const Page = async ({ params: { id } }) => {
     const anime = await getAnimeResponse(`anime/${id}`)
+    const genres = anime.data.genres
 
     return (
         <>
@@ -58,6 +59,14 @@ const Page = async ({ params: { id } }) => {
                     <h2 className="text-xl text-color-primary ">{anime.data.broadcast.timezone}</h2>
                     <p className="text-color-primary ">{anime.data.synopsis}</p>
                     <p className="text-color-primary ">{anime.data.background}</p>
+                </div>
+                <div className="flex justify-start items-center font-bold overflow-auto text-2xl text-color-primary gap-1">
+                    <p>Genre:</p>
+                    {genres.map((genre) => {
+                        return (
+                            <p className="whitespace-nowrap rounded-full bg-color-primary px-2.5 py-0.5 text-sm text-color-accent">{genre.name}s</p>
+                        )
+                    })}
                 </div>
                 <div className="flex flex-col py-4 gap-2">
                     <a className="text-color-primary underline" href={anime.data.url}>official website</a>

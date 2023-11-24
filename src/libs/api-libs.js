@@ -4,15 +4,12 @@ export const getAnimeResponse = async (resourch, query) => {
     return anime
 }
 
-export const getNestedAnimeResponse = async(resource, objectProperty) => {
+export const getNestedAnimeResponse = async (resource, objectProperty) => {
     const response = await getAnimeResponse(resource)
     return response.data.flatMap(item => item[objectProperty])
 }
 
-export const getAnimeGenres = async() => {
-}
-
-export const reproduce = (data, gap = 8)  => {
+export const reproduce = (data, gap = 8) => {
     const first = ~~(Math.random() * (data.length - gap) + 1)
     const last = first + gap
 
