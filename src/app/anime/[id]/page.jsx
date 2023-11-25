@@ -3,8 +3,14 @@ import VideoPlayer from "@/components/Utilities/VideoPlayer"
 import Image from "next/image"
 
 const Page = async ({ params: { id } }) => {
+    
     const anime = await getAnimeResponse(`anime/${id}`)
     const genres = anime.data.genres
+    const genre = genres.map((genre) => {
+        return (
+            <a className="whitespace-nowrap rounded-full bg-color-primary px-2.5 py-0.5 text-sm text-color-accent" href={genre.url}>{genre.name}</a>
+        )
+    })
 
     return (
         <>
@@ -63,11 +69,7 @@ const Page = async ({ params: { id } }) => {
                 <div className="flex justify-start items-center font-bold text-2xl text-color-primary gap-1">
                     <p>Genre:</p>
                     <div className="flex justify-start items-center font-bold overflow-auto text-2xl text-color-primary gap-1">
-                        {genres.map((genre) => {
-                            return (
-                                <p className="whitespace-nowrap rounded-full bg-color-primary px-2.5 py-0.5 text-sm text-color-accent">{genre.name}s</p>
-                            )
-                        })}
+                        {genre}
                     </div>
                 </div>
                 <div className="flex flex-col py-4 gap-2">
