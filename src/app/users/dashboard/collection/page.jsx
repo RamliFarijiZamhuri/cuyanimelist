@@ -6,7 +6,6 @@ import { authUserSessiom } from "@/libs/auth-libs"
 const Page = async () => {
     const user = await authUserSessiom()
     const collection = await prisma.collection.findMany({ where: { user_email: user.email } })
-    console.log(collection)
 
     return (
         <section className="mt-4 px-4 w-full">
